@@ -1,0 +1,37 @@
+<h1>Listing picklines</h1>
+
+<table>
+  <tr>
+    <th>Red last wash date</th>
+    <th>Blue last wash date</th>
+    <th>Bandage replacement date</th>
+    <th>Blue ventile replacement date</th>
+    <th>Red ventile replacement date</th>
+    <th>Bandage interval days</th>
+    <th>Parpar replacement date</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @picklines.each do |pickline| %>
+  <tr>
+    <td><%= pickline.red_last_wash_date %></td>
+    <td><%= pickline.blue_last_wash_date %></td>
+    <td><%= pickline.bandage_replacement_date %></td>
+    <td><%= pickline.blue_ventile_replacement_date %></td>
+    <td><%= pickline.red_ventile_replacement_date %></td>
+    <td><%= pickline.bandage_interval_days %></td>
+    <td><%= pickline.parpar_replacement_date %></td>
+    <td><%= pickline.user_id %></td>
+    <td><%= link_to 'Show', pickline %></td>
+    <td><%= link_to 'Edit', edit_pickline_path(pickline) %></td>
+    <td><%= link_to 'Destroy', pickline, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pickline', new_pickline_path %>

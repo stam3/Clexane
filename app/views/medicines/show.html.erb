@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @medicine.name %>
+</p>
+
+<p>
+  <b>Daysoffset:</b>
+  <%= @medicine.daysOffset %>
+</p>
+
+<p>
+  <b>Firsthour:</b>
+  <%= @medicine.firstHour %>
+</p>
+
+<p>
+  <b>Secondhour:</b>
+  <%= @medicine.secondHour %>
+</p>
+
+<p>
+  <b>Isspecificdays:</b>
+  <%= @medicine.isSpecificDays %>
+</p>
+
+<p>
+  <b>Specificdays:</b>
+  <%= @medicine.specificDays %>
+</p>
+
+<p>
+  <b>Cancelednotificationdate:</b>
+  <%= @medicine.canceledNotificationDate %>
+</p>
+
+<p>
+  <b>Daysoffsetstartdate:</b>
+  <%= @medicine.daysOffsetStartDate %>
+</p>
+
+
+<%= link_to 'Edit', edit_medicine_path(@medicine) %> |
+<%= link_to 'Back', medicines_path %>

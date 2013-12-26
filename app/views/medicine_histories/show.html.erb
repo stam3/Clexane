@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Actualhour:</b>
+  <%= @medicine_history.actualHour %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @medicine_history.c_type %>
+</p>
+
+<p>
+  <b>Isfirsthour:</b>
+  <%= @medicine_history.isFirstHour %>
+</p>
+
+<p>
+  <b>medicine_id:</b>
+  <%= @medicine_history.medicine_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_medicine_history_path(@medicine_history) %> |
+<%= link_to 'Back', medicine_histories_path %>

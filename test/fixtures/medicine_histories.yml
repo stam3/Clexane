@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  actualHour: 2013-12-20 13:31:03
+  type: 1
+  isFirstHour: false
+  medicineID: 1
+
+two:
+  actualHour: 2013-12-20 13:31:03
+  type: 1
+  isFirstHour: false
+  medicineID: 1

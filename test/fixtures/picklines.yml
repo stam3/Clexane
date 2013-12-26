@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  red_last_wash_date: 2013-12-03
+  blue_last_wash_date: 2013-12-03
+  bandage_replacement_date: 2013-12-03
+  blue_ventile_replacement_date: 2013-12-03
+  red_ventile_replacement_date: 2013-12-03
+  bandage_interval_days: 1
+  parpar_replacement_date: 2013-12-03
+  user_id: 1
+
+two:
+  red_last_wash_date: 2013-12-03
+  blue_last_wash_date: 2013-12-03
+  bandage_replacement_date: 2013-12-03
+  blue_ventile_replacement_date: 2013-12-03
+  red_ventile_replacement_date: 2013-12-03
+  bandage_interval_days: 1
+  parpar_replacement_date: 2013-12-03
+  user_id: 1

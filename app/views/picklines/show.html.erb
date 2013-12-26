@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Red last wash date:</b>
+  <%= @pickline.red_last_wash_date %>
+</p>
+
+<p>
+  <b>Blue last wash date:</b>
+  <%= @pickline.blue_last_wash_date %>
+</p>
+
+<p>
+  <b>Bandage replacement date:</b>
+  <%= @pickline.bandage_replacement_date %>
+</p>
+
+<p>
+  <b>Blue ventile replacement date:</b>
+  <%= @pickline.blue_ventile_replacement_date %>
+</p>
+
+<p>
+  <b>Red ventile replacement date:</b>
+  <%= @pickline.red_ventile_replacement_date %>
+</p>
+
+<p>
+  <b>Bandage interval days:</b>
+  <%= @pickline.bandage_interval_days %>
+</p>
+
+<p>
+  <b>Parpar replacement date:</b>
+  <%= @pickline.parpar_replacement_date %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @pickline.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_pickline_path(@pickline) %> |
+<%= link_to 'Back', picklines_path %>

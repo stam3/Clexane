@@ -1,0 +1,29 @@
+<h1>Listing medicine_histories</h1>
+
+<table>
+  <tr>
+    <th>Actualhour</th>
+    <th>Type</th>
+    <th>Isfirsthour</th>
+    <th>medicine_id</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @medicine_histories.each do |medicine_history| %>
+  <tr>
+    <td><%= medicine_history.actualHour %></td>
+    <td><%= medicine_history.c_type %></td>
+    <td><%= medicine_history.isFirstHour %></td>
+    <td><%= medicine_history.medicine_id %></td>
+    <td><%= link_to 'Show', medicine_history %></td>
+    <td><%= link_to 'Edit', edit_medicine_history_path(medicine_history) %></td>
+    <td><%= link_to 'Destroy', medicine_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Medicine history', new_medicine_history_path %>

@@ -1,0 +1,49 @@
+<%= form_for(@medicine) do |f| %>
+  <% if @medicine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@medicine.errors.count, "error") %> prohibited this medicine from being saved:</h2>
+
+      <ul>
+      <% @medicine.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :daysOffset %><br />
+    <%= f.number_field :daysOffset %>
+  </div>
+  <div class="field">
+    <%= f.label :firstHour %><br />
+    <%= f.time_select :firstHour %>
+  </div>
+  <div class="field">
+    <%= f.label :secondHour %><br />
+    <%= f.time_select :secondHour %>
+  </div>
+  <div class="field">
+    <%= f.label :isSpecificDays %><br />
+    <%= f.check_box :isSpecificDays %>
+  </div>
+  <div class="field">
+    <%= f.label :specificDays %><br />
+    <%= f.number_field :specificDays %>
+  </div>
+  <div class="field">
+    <%= f.label :canceledNotificationDate %><br />
+    <%= f.datetime_select :canceledNotificationDate %>
+  </div>
+  <div class="field">
+    <%= f.label :daysOffsetStartDate %><br />
+    <%= f.datetime_select :daysOffsetStartDate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

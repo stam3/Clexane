@@ -1,0 +1,49 @@
+<%= form_for(@pickline) do |f| %>
+  <% if @pickline.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pickline.errors.count, "error") %> prohibited this pickline from being saved:</h2>
+
+      <ul>
+      <% @pickline.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :red_last_wash_date %><br />
+    <%= f.date_select :red_last_wash_date %>
+  </div>
+  <div class="field">
+    <%= f.label :blue_last_wash_date %><br />
+    <%= f.date_select :blue_last_wash_date %>
+  </div>
+  <div class="field">
+    <%= f.label :bandage_replacement_date %><br />
+    <%= f.date_select :bandage_replacement_date %>
+  </div>
+  <div class="field">
+    <%= f.label :blue_ventile_replacement_date %><br />
+    <%= f.date_select :blue_ventile_replacement_date %>
+  </div>
+  <div class="field">
+    <%= f.label :red_ventile_replacement_date %><br />
+    <%= f.date_select :red_ventile_replacement_date %>
+  </div>
+  <div class="field">
+    <%= f.label :bandage_interval_days %><br />
+    <%= f.number_field :bandage_interval_days %>
+  </div>
+  <div class="field">
+    <%= f.label :parpar_replacement_date %><br />
+    <%= f.date_select :parpar_replacement_date %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

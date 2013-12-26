@@ -1,0 +1,33 @@
+<%= form_for(@medicine_history) do |f| %>
+  <% if @medicine_history.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@medicine_history.errors.count, "error") %> prohibited this medicine_history from being saved:</h2>
+
+      <ul>
+      <% @medicine_history.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :actualHour %><br />
+    <%= f.datetime_select :actualHour %>
+  </div>
+  <div class="field">
+    <%= f.label :c_type %><br />
+    <%= f.number_field :c_type %>
+  </div>
+  <div class="field">
+    <%= f.label :isFirstHour %><br />
+    <%= f.check_box :isFirstHour %>
+  </div>
+  <div class="field">
+    <%= f.label :medicine_id %><br />
+    <%= f.number_field :medicine_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

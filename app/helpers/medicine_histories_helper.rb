@@ -1,0 +1,2 @@
+module MedicineHistoriesHelper
+end

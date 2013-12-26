@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  daysOffset: 1
+  firstHour: 2013-11-29
+  secondHour: 2013-11-29
+  isSpecificDays: false
+  specificDays: 1
+  canceledNotificationDate: 2013-11-29
+  daysOffsetStartDate: 2013-11-29
+
+two:
+  name: MyString
+  daysOffset: 1
+  firstHour: 2013-11-29
+  secondHour: 2013-11-29
+  isSpecificDays: false
+  specificDays: 1
+  canceledNotificationDate: 2013-11-29
+  daysOffsetStartDate: 2013-11-29
