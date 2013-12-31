@@ -37,6 +37,6 @@ production:
   reconnect: false
   database: clexane_production
   pool: 5
-  username: root
-  password: Rubh1975
+  username: clexane
+  password: Gili2006
   host: localhost
