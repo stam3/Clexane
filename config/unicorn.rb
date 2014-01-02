@@ -27,7 +27,8 @@ working_directory APP_PATH  + "/current" #"/path/to/app/current" # available in 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
 #listen "/path/to/.unicorn.sock", :backlog => 64
-listen APP_PATH + "/tmp/unicorn.sock", :backlog => 64
+# listen APP_PATH + "/tmp/unicorn.sock", :backlog => 64
+listen "/var/run/unicorn/clexane.sock", :tcp_nodelay => true, :backlog => 1024
 listen 8080, :tcp_nopush => true
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
