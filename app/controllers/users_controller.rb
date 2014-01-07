@@ -43,7 +43,13 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(params[:user])
+    if (params[:user])
+      @user = User.new(params[:user])
+    else
+      # debugger
+      @user = User.new(:email => params[:email], :password => params[:password], 
+                               :password_confirmation => params[:password_confirmation] )
+    end
     #print 'in new, user: ' + @user.email
     respond_to do |format|
       if @user.save
@@ -59,7 +65,8 @@ class UsersController < ApplicationController
           session[:user_id] = @user.id 
           format.html { redirect_to users_url, notice: 'User was successfully created.' }
           #format.json { redirect_to login_url(params[:user]) }
-          format.json { render json: @user, status: :created, location: @user }
+          result = { "opcode" => 2, "response" => 200, "user" => @user}
+          format.json { render json: result, status: :created, location: result }
         else
           #session[:user_id] = nil
           format.html { render action: "new" }
@@ -69,7 +76,8 @@ class UsersController < ApplicationController
       else
         #session[:user_id] = nil
         format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        result = { "opcode" => 2, "response" => 10000, "error_msg" => @user.errors }
+        format.json { render json: result, status: :unprocessable_entity }
       end
     end
   end
