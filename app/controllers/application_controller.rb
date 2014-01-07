@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 		#print 'in ApplicationController, session[:user_id]: ' ,session[:user_id]
 		#unless User.find_by_id(session[:user_id])
 		puts
-		print 'current_user.id: ', current_user.id
+		#print 'current_user.id: ', current_user.id
 		unless User.find_by_auth_token(cookies[:auth_token])
 			puts "unauthorize"
 		
