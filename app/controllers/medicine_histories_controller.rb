@@ -101,12 +101,15 @@ class MedicineHistoriesController < ApplicationController
 
       respond_to do |format|
         format.html { redirect_to medicine_histories_url }
-        format.json { head :no_content }
+        result = { "opcode" => 305, "response" => 200 }
+        format.json { render json: result }
       end
     else
-      result = { "opcode" => 305, "response" => 401, "error_msg" =>  "Unauthorized" }
-      format.html { redirect_to login_url, notice: "Logged out" }
-      format.json { render json: result }
+      respond_to do |format|
+        result = { "opcode" => 305, "response" => 401, "error_msg" =>  "Unauthorized" }
+        format.html { redirect_to login_url, notice: "Logged out" }
+        format.json { render json: result }
+      end
     end
   end
 end

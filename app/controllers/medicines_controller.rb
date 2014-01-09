@@ -121,11 +121,21 @@ class MedicinesController < ApplicationController
   # DELETE /medicines/1.json
   def destroy
     @medicine = Medicine.find(params[:id])
-    @medicine.destroy
+    if @medicine.user_id == current_user.id
+      @medicine.destroy
 
-    respond_to do |format|
-      format.html { redirect_to medicines_url }
-      format.json { head :no_content }
+      respond_to do |format|
+        format.html { redirect_to medicines_url }
+        result = { "opcode" => 105, "response" => 200 }
+        format.json { render json: result }
+      end
+    else
+      respond_to do |format|
+        result = { "opcode" => 105, "response" => 401, "error_msg" =>  "Unauthorized" }
+        format.html { redirect_to login_url, notice: "Logged out" }
+        format.json { render json: result }
+      end
     end
+
   end
 end
