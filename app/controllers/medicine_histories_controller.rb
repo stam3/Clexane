@@ -2,12 +2,26 @@ class MedicineHistoriesController < ApplicationController
   # GET /medicine_histories
   # GET /medicine_histories.json
   def index
-    # @medicine_histories = MedicineHistory.all
+    
     # @medicine_histories = MedicineHistory.joins({:medicine, :user})
-    @medicine_histories = current_user.medicine_histories.today
+    history_type = params[:history_type]
+    opcode = 300
+    if history_type == '0'
+      @medicine_histories = MedicineHistory.all
+      puts 'MedicineHistory.all - 0'
+    elsif history_type == '1'
+      @medicine_histories = current_user.medicine_histories.today
+      opcode = 310
+      puts 'today - 1'
+    elsif history_type == '2'
+      @medicine_histories = current_user.medicine_histories.today.specificMedicineToday(params[:medicine_id])
+      opcode = 320
+      puts 'specificMedicineToday - 2'
+    end
 
+    puts  'history_type: ', history_type, ' @medicine_histories: ', @medicine_histories
     respond_to do |format|
-      result = { "opcode" => 300, "response" => 200, "medicine_histories" => @medicine_histories }
+      result = { "opcode" => opcode, "response" => 200, "medicine_histories" => @medicine_histories }
       format.html # index.html.erb
       format.json { render json: result }
     end
@@ -58,7 +72,7 @@ class MedicineHistoriesController < ApplicationController
 
       respond_to do |format|
         if @medicine_history.save
-          result = { "opcode" => 301, "response" => 200, "medicine_history" => @medicine_history }
+          result = { "opcode" => 301, "response" => 200, "  " => @medicine_history }
           format.html { redirect_to @medicine_history, notice: 'Medicine history was successfully created.' }
           format.json { render json: result, status: :created, location: @medicine_history }
         else
