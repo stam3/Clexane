@@ -35,4 +35,38 @@ Clexane::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+
+# Config Mailer
+# config.action_mailer.default_url_options = { :host => "localhost:3000" }
+
+#   config.action_mailer.delivery_method = :sendmail
+# # Defaults to:
+# # config.action_mailer.sendmail_settings = {
+# #   location: '/usr/sbin/sendmail',
+# #   arguments: '-i -t'
+# # }
+# config.action_mailer.perform_deliveries = true
+# config.action_mailer.raise_delivery_errors = true
+# # config.action_mailer.default_options = {from: 'no-replay@example.com'}
+# ActionMailer::Base.default :from => 'no-replay@example.com'
+
+# CONFIG GMAIL:
+config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default :charset => "utf-8"
+
+   config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.smtp_settings = {
+      :address              => 'smtp.gmail.com',
+      :port                 => 587,
+      # in previous Stackoverflow I read :domain part wasn't needed, so leave it out
+      # :domain               => 'gmail.com',
+      :user_name            => 'dudus.iphone@gmail.com',
+      :password             => 'Rubh1975',
+      :authentication       => 'plain',
+      :enable_starttls_auto => true
+  }
+
 end

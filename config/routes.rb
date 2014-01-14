@@ -1,4 +1,10 @@
 Clexane::Application.routes.draw do
+  # get "password_resets/new"
+
+  #root => 'medicines_controller#index'
+  root :to => "medicines#index"
+  # match '/home' => 'medicines#index', :as => :home
+  
   resources :medicine_histories
 
 
@@ -34,6 +40,7 @@ Clexane::Application.routes.draw do
   #   post 'signup' => :create
   # end
 
+  resources :password_resets
 
 
   # The priority is based upon order of creation:
