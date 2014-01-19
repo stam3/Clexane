@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Shotdate:</b>
+  <%= @clexane_history.shotDate %>
+</p>
+
+<p>
+  <b>Dosage:</b>
+  <%= @clexane_history.dosage %>
+</p>
+
+<p>
+  <b>Isright:</b>
+  <%= @clexane_history.isRight %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @clexane_history.user_id %>
+</p>
+
+<p>
+  <b>Index:</b>
+  <%= @clexane_history.index %>
+</p>
+
+
+<%= link_to 'Edit', edit_clexane_history_path(@clexane_history) %> |
+<%= link_to 'Back', clexane_histories_path %>

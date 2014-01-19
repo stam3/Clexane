@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
 	has_many :medicines, dependent: :destroy
   has_many :medicine_histories, :through => :medicines
+  has_many :clexane_histories, dependent: :destroy, order: 'shotDate DESC'
 	has_one :picklines
   
   attr_accessible :email, :password, :password_confirmation

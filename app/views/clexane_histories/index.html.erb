@@ -1,0 +1,31 @@
+<h1>Listing clexane_histories</h1>
+
+<table>
+  <tr>
+    <th>Shotdate</th>
+    <th>Dosage</th>
+    <th>Isright</th>
+    <th>User</th>
+    <th>Index</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clexane_histories.each do |clexane_history| %>
+  <tr>
+    <td><%= clexane_history.shotDate %></td>
+    <td><%= clexane_history.dosage %></td>
+    <td><%= clexane_history.isRight %></td>
+    <td><%= clexane_history.user_id %></td>
+    <td><%= clexane_history.index %></td>
+    <td><%= link_to 'Show', clexane_history %></td>
+    <td><%= link_to 'Edit', edit_clexane_history_path(clexane_history) %></td>
+    <td><%= link_to 'Destroy', clexane_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Clexane history', new_clexane_history_path %>

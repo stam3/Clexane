@@ -1,4 +1,7 @@
 Clexane::Application.routes.draw do
+  resources :clexane_histories
+
+
   # get "password_resets/new"
 
   #root => 'medicines_controller#index'

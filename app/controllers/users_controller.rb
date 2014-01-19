@@ -76,7 +76,7 @@ class UsersController < ApplicationController
       else
         #session[:user_id] = nil
         format.html { render action: "new" }
-        result = { "opcode" => 2, "response" => 10000, "error_msg" => @user.errors }
+        result = { "opcode" => 2, "response" => 1100, "error_msg" => @user.errors }
         format.json { render json: result, status: :unprocessable_entity }
       end
     end

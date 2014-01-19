@@ -46,7 +46,7 @@ class SessionsController < ApplicationController
     respond_to do |format|
     	format.json { render json: {:result => 'logged out'} }
     	format.html { redirect_to login_url, notice: "Logged out" }
-	end
+	  end
   end
 
   def test1
